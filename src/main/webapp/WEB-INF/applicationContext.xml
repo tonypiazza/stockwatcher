@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/task
+	http://www.springframework.org/schema/task/spring-task-3.2.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:component-scan base-package="org.stockwatcher"/>
+
+	<bean id="sessionFactory" 
+		class="org.stockwatcher.data.cassandra.SessionFactory">
+		<property name="keyspace" value="stockwatcher"/>
+		<property name="nodes">
+			<array>
+				<value>127.0.0.1</value>
+				<value>127.0.0.2</value>
+				<value>127.0.0.3</value>
+			</array>
+		</property>
+	</bean>
+
+	<bean id="dailySummaryGenerator" 
+		class="org.stockwatcher.data.cassandra.DailySummaryGenerator"/>
+
+	<bean id="performanceMonitor" 
+		class="org.springframework.aop.interceptor.PerformanceMonitorInterceptor"/>
+
+	<bean id="exceptionLogger" class="org.stockwatcher.aspect.ExceptionLogger"/>
+
+<!--  Uncomment below for performance info  -->
+<!-- 
+	<aop:config>
+		<aop:pointcut id="daoMethods" 
+			expression="execution(* org.stockwatcher.data.*DAO*.*(..))"/>
+		<aop:advisor pointcut-ref="daoMethods" advice-ref="performanceMonitor"/>
+		<aop:aspect ref="exceptionLogger">
+			<aop:after-throwing pointcut-ref="daoMethods" method="log" throwing="exception"/>
+		</aop:aspect>
+	</aop:config>
+-->	
+
+	<bean id="mbeanServer" 
+		class="org.springframework.jmx.support.MBeanServerFactoryBean">
+		<property name="locateExistingServerIfPossible" value="true"/>
+	</bean>
+
+	<context:mbean-export/>
+
+</beans>

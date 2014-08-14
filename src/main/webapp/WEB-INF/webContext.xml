@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/img/" mapping="/img/**"/>
+	<mvc:resources location="/js/" mapping="/js/**"/>
+
+	<mvc:annotation-driven/>
+
+	<mvc:view-controller path="/about" view-name="about"/>
+	<mvc:view-controller path="/home" view-name="home"/>
+
+	<mvc:interceptors>
+		<bean id="webContentInterceptor" 
+			class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+			<property name="cacheSeconds" value="0" />
+			<property name="useExpiresHeader" value="true" />
+			<property name="useCacheControlHeader" value="true" />
+			<property name="useCacheControlNoStore" value="true" />
+			<property name="cacheMappings">
+    			<props>
+	        		<prop key="**/stocks">0</prop>
+	        		<prop key="**/users">0</prop>
+	        		<prop key="**/watchlists">0</prop>
+    			</props>
+			</property>
+		</bean>
+	</mvc:interceptors>
+
+	<context:component-scan base-package="org.stockwatcher.web"/>
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+		<property name="order" value="2"/>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="1"/>
+	</bean>
+
+	<bean name="watchList.rss" class="org.stockwatcher.web.rss.WatchListRssView">
+		<property name="feedGenerator" value="The $tockWatcher"/>
+		<property name="feedLink" value="http://www.stockwatcher.org"/>
+		<property name="itemAuthor" value="LearningPatterns"/>
+	</bean>
+
+	<bean name="mostWatched.rss" class="org.stockwatcher.web.rss.MostWatchedStocksRssView">
+		<property name="feedTitle" value="Most Watched Stocks"/>
+		<property name="feedDescription" value="The most watched stocks in $tockWatcher"/>
+		<property name="feedGenerator" value="The $tockWatcher"/>
+		<property name="feedLink" value="http://www.stockwatcher.org"/>
+		<property name="itemAuthor" value="LearningPatterns"/>
+	</bean>
+
+</beans>

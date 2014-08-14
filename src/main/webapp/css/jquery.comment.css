@@ -1,0 +1,192 @@
+﻿.commentsBlock {
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+    .commentsBlock form {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .commentsBlock ul {
+        list-style: none;
+        margin: 0 0;
+        padding: 0;
+    }
+
+    .commentsBlock .comment .commentText {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+        white-space: -normal;
+        white-space: -moz-normal;
+        white-space: -o-normal;
+        margin: 5px 0 10px 0;
+    }
+
+    .commentsBlock .newComment {
+        padding: 2px;
+    }
+
+    .commentsBlock .heading {
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+        .commentsBlock .heading h4 {
+            float: left;
+            color: #888;
+            margin: 0 5px 5px 0;
+            float: left;
+        }
+
+        .commentsBlock .heading .loadingIndicator {
+            background: transparent url(../img/ajax-loader.gif) no-repeat;
+            height: 15px;
+            width: 15px;
+            float: left;
+            display: none;
+        }
+
+    .commentsBlock .sendComment {
+        color: #508bc0;
+        font-size: 12px;
+    }
+
+        .commentsBlock .sendComment span {
+            padding: 0 5px 0px 20px;
+            background: transparent url('../img/add_comment_ico.png') no-repeat 0px 4px;
+            display: block
+        }
+
+    .commentsBlock textarea {
+        width: 98%;
+        height: 30px;
+        margin-bottom: 10px;
+        height: 40px;
+    }
+
+    .commentsBlock .sendComment {
+        color: #508bc0;
+        font-size: 12px;
+    }
+
+.comments {
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+}
+
+    .comments .comment {
+        padding: 10px 0px;
+        margin: 0px 20px;
+        border-bottom: #eee solid 1px;
+    }
+
+        .comments .comment .commentContent .avatar {
+            margin-right: 10px;
+            float: left;
+        }
+
+            .comments .comment .commentContent .avatar img {
+                height: 64px;
+            }
+
+            .comments .comment .commentContent .avatar .defaultAvatar {
+                background-image: url("../img/userDefaultImage.png");
+                background-repeat: no-repeat;
+                height: 64px;
+                width: 64px;
+            }
+
+            .comments .comment .commentContent .content.avatarPadding {
+                padding-left: 64px;
+            }
+
+        .comments .comment .info {
+            font-size: 13px;
+            color: #505050;
+            margin: 0 0;
+        }
+
+            .comments .comment .info .author {
+                font-weight: bold;
+                font-size: 12px;
+            }
+
+            .comments .comment .info time {
+                font-size: 10px;
+                color: #666666;
+                line-height: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
+
+            .comments .comment .info a {
+                margin-left: 5px;
+            }
+
+            .comments .comment .info .votefor {
+                margin-left: 0px;
+                color: #666;
+                cursor: pointer;
+                text-decoration: none;
+                -webkit-transition: opacity .2s linear;
+                -moz-transition: opacity .2s linear;
+                -ms-transition: opacity .2s linear;
+                -o-transition: opacity .2s linear;
+                transition: opacity .2s linear;
+                filter: alpha(opacity=60);
+                -khtml-opacity: .6;
+                -moz-opacity: .6;
+                opacity: .6;
+            }
+
+            .comments .comment .info .votefor:hover {
+                color: black;
+                filter: alpha(opacity=100);
+                -khtml-opacity: 1;
+                -moz-opacity: 1;
+                opacity: 1;
+            }
+
+            .comments .comment .info .votefor span {
+                font-size: 15px;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                vertical-align: top;
+            }
+
+            .comments .comment .info .votefor i {
+                font-family: 'embed-icons';
+                speak: none;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+            }
+
+    .comments li:last-child {
+        border: none;
+    }
+
+    .comments .comment .contentBlockComment {
+        padding: 0;
+        border: none;
+        margin-top: 5px;
+    }
+
+    .comments .comment .reply_comments {
+        margin-top: 10px;
+    }
+
+        .comments .comment .reply_comments .comment {
+            padding: 5px 20px 5px 20px;
+            margin-bottom: 0px;
+            border-top: 1px solid #eee;
+            border-bottom-width: 0px;
+            background: transparent url('../img/comment.gif') no-repeat 0px 10px;
+        }
+
+.commentsBlock .clearFix {
+    clear: both;
+}

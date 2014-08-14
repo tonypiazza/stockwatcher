@@ -1,0 +1,81 @@
+/**
+ * Styles used in the StockWatcher application.
+ * 
+ * @author Tony Piazza
+ */
+
+body {
+	background-color: #eeeeee;
+}
+
+body>.navbar .brand {
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 20px;
+	float: right;
+	color: rgb(51, 51, 51);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px
+		rgba(255, 255, 255, .125);
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+body>.navbar .brand:hover {
+	text-decoration: none;
+	color: #216C2A;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px
+		rgba(255, 255, 255, .4);
+}
+
+
+div.main {
+	margin-top: 60px; 
+	margin-bottom: 30px;
+}
+
+.table td {
+	vertical-align: middle;
+}
+
+.table .text-right {
+	text-align: right;
+}
+
+.table .text-left {
+	text-align: left;
+}
+
+.table .text-center {
+	text-align: center;
+}
+
+.btn-inverse:hover {
+	color: #216C2A;
+}
+
+span.dynatree-icon {
+	background-image: none;
+	width: 0;
+}
+
+span.dynatree-node a {
+	padding-left: 0;
+}
+
+span.dynatree-checkbox {
+	margin-top: 2px;
+	margin-left: 0;
+}
+
+ul.dynatree-container {
+	padding: 0;
+	border-top: 1px solid gray;
+	border-right: none;
+	border-bottom: 1px solid gray;
+	border-left: none;
+}
+
+ul.dynatree-container li {
+	background-color: #eeeeee;
+}
