@@ -221,7 +221,7 @@
 			</div>
 		</div>
 		<footer>
-			<p class="pull-right">&copy; DataStax, Inc.</p>
+			<p class="pull-right">Powered by <a href="http://cassandra.apache.org/" target="_blank">Apache Cassandra</a></p>
 		</footer>
 
 	</div>	<!-- /container -->

@@ -22,17 +22,12 @@
 		td {
 			padding: 10px;
 		}
-		.partner {
+		.logo {
 			vertical-align: top;
 		}
 		.main {
-		 	margin-left: auto;
 		 	margin-right: auto;
 		 	width: 60%;
-		}
-		td.lp {
-			border-top: solid thin black;
-			padding-top: 30px;
 		}
     </style>
 
@@ -70,14 +65,13 @@
 
     <div class="container">
 		<div class="main">
-			<p>The <strong>$tockWatcher</strong> application was developed by LearningPatterns for DataStax.</p>
+			<p>The <strong>StockWatcher</strong> application was developed for DataStax Inc.</p>
 			<table>
 				<tr>
-					<td class="partner"><a target="_blank" href="http://www.datastax.com/"><img src="img/datastax-logo.png"></a></td>
+					<td class="logo"><a target="_blank" href="http://www.datastax.com/"><img src="img/datastax-logo.png"></a></td>
 					<td style="text-align: right;">
 						<address>
-							<strong><a target="_blank" href="http://www.datastax.com/">DataStax Inc. HQ</a></strong><br>
-							SAN FRANCISCO BAY AREA<br>
+							<strong><a target="_blank" href="http://www.datastax.com/">DataStax Inc.</a></strong><br>
 							3975 Freedom Circle<br>
 							Santa Clara, CA 95054<br>
 							USA<br>
@@ -85,21 +79,10 @@
 						</address>
 					</td>
 				</tr>
-				<tr>
-					<td class="lp">
-						<address>
-							<strong><a target="_blank" href="http://learningpatterns.com/">LearningPatterns Inc.</a></strong><br>
-							262 Main St. #12<br>
-							Beacon, NY 12508-2734<br>
-							Phone: 212.487.9064
-						</address>
-					</td>
-					<td class="partner lp"><a target="_blank" href="http://learningpatterns.com/"><img src="img/learningpatterns-logo.jpg"></a></td>
-				</tr>
 			</table>
 		</div>
 		<footer>
-			<p class="pull-right">&copy; DataStax, Inc.</p>
+			<p>Powered by <a href="http://cassandra.apache.org/" target="_blank">Apache Cassandra</a></p>
 		</footer>
     </div> <!-- /container -->
   </body>
