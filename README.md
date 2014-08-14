@@ -8,11 +8,11 @@ Here are the steps you need to follow to launch the application for the first ti
 
 1. Launch cqlsh from the project folder and execute the following command:
 
-source 'cql/stockwatcher.cql';
+	source 'cql/stockwatcher.cql';
 
-2. Execute Maven using the following command:
+2. Execute Maven using the following command: 
 
-mvn jetty:run
+	mvn jetty:run
 
 Once the application is up and running, you can launch a web browser with this URL:
 
