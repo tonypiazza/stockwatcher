@@ -16,7 +16,7 @@ mvn jetty:run
 
 Once the application is up and running, you can launch a web browser with this URL:
 
-http://localhost:8080/stockwatcher/
+[http://localhost:8080/stockwatcher/] (http://localhost:8080/stockwatcher/)
 
 To stop the application, you can just Ctrl-C in the terminal window where you launched it.
 
