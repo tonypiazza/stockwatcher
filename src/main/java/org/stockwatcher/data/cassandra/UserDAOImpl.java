@@ -46,9 +46,9 @@ import com.datastax.driver.core.exceptions.DriverException;
  * @author Tony Piazza
  */
 @Repository
-public class UserDAOImpl extends CassandraDAO implements UserDAO {
+public class UserDAOImpl extends CassandraDAO implements CassandraUserDAO {
 	@Autowired
-	private WatchListDAO watchListDAO;
+	private CassandraWatchListDAO watchListDAO;
 
 	private PreparedStatement selectUserById;
 	private PreparedStatement selectUsers;

@@ -70,9 +70,9 @@ import com.datastax.driver.core.utils.UUIDs;
  * @author Tony Piazza
  */
 @Repository
-public class StockDAOImpl extends CassandraDAO implements StockDAO {
+public class StockDAOImpl extends CassandraDAO implements CassandraStockDAO {
 	@Autowired
-	private UserDAO userDAO;
+	private CassandraUserDAO userDAO;
 
 	private PreparedStatement selectTradesBySymbolAndDate;
 	private PreparedStatement selectStockWatchCounts;

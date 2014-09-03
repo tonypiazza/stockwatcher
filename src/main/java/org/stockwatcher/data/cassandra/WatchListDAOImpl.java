@@ -60,10 +60,10 @@ import com.datastax.driver.core.utils.UUIDs;
  * @author Tony Piazza
  */
 @Repository
-public class WatchListDAOImpl extends CassandraDAO implements WatchListDAO {
+public class WatchListDAOImpl extends CassandraDAO implements CassandraWatchListDAO {
 
 	@Autowired
-	private StockDAO stockDAO;
+	private CassandraStockDAO stockDAO;
 
 	private PreparedStatement insertWatchListItem;
 	private PreparedStatement selectWatchListById;

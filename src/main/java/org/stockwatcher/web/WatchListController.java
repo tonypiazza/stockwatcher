@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.stockwatcher.data.UserDAO;
 import org.stockwatcher.data.cassandra.StatementOptions;
-import org.stockwatcher.data.cassandra.WatchListDAO;
+import org.stockwatcher.data.cassandra.CassandraWatchListDAO;
 import org.stockwatcher.domain.User;
 import org.stockwatcher.domain.WatchList;
 
@@ -59,7 +59,7 @@ public class WatchListController extends BaseController {
 			DowngradingConsistencyRetryPolicy.INSTANCE));
 
 	@Autowired
-	private WatchListDAO watchListDAO;
+	private CassandraWatchListDAO watchListDAO;
 	@Autowired
 	private UserDAO userDAO;
 
